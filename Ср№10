@@ -1,0 +1,62 @@
+№1
+pin = 4590
+while True:
+    password = int(input("Введите Пин: "))
+    if password == pin:
+        print("Пин-код верный ")
+        break
+    else:
+        print("Ошибка, Введите пароль снова")
+        continue
+№2
+a = int(input())
+while True:
+    b = int(input())
+    if a < b:
+        while True:
+            c = int(input())
+            if b < c:
+                print("Последовательность принята!")
+                break
+            else:
+                continue
+        break
+    else:
+        continue
+№4
+a = 0
+while True:
+    b = int(input("Enter a number: "))
+    if b == 0:
+        break
+    elif b < 0:
+        print("Ошибка цены ")
+        continue
+    else:
+        a += b
+        continue
+if a < 1000:
+    print("Применена скидка в 10%, С Вас: ", a-(a/10), "Руб")
+else:
+    print("С Вас: ",a, "Руб")
+№5
+a = 1000
+while True:
+    b = int(input("Введите команду(1-4)"))
+    if b == 1:
+        print("Ваш баланс: ", a, "Руб")
+    elif b == 2:
+        if a >= 100:
+            a -= 100
+            print("Снято")
+        else:
+            print("Недостаточно средств")
+    elif b == 3:
+        a += 100
+        print("Внесено")
+    elif b == 4:
+        print("До свидания!")
+        break
+    else:
+        print("Неверная команда")
+        continue
