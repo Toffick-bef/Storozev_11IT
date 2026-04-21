@@ -1,0 +1,22 @@
+№1
+n = int(input("Введите натуральное число, позязя"))
+i = 0
+while i < n:
+    i += 1
+    if (5 <= i <= 9) or (17 <= i <= 37) or (78 <= i <= 99):
+        continue
+    else:
+        print("ERROR")
+    print(i)
+№2
+h = input("Введите первое имя: ")
+i = 0
+if h == "Александра":
+    while True:
+        n = input("Введите следующее имя: ")
+        if n == "Левон":
+            print(i)
+            break
+        else:
+            i += 1
+            continue
