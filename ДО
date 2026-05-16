@@ -1,0 +1,100 @@
+№1
+class NPC:
+    def __init__(self, name, good):
+        self.name = name
+        self.good = good
+
+
+class Merchant(NPC):
+    def show(self):
+        print(self.name, self.good)
+
+
+npc = Merchant("Торговец", "Паучий глаз")
+print(npc.name, npc.good)
+
+
+№2
+class Pokemon:
+    def __init__(self, name, poke_type, hp, attack):
+        self.name = name
+        self.poke_type = poke_type
+        self.hp = hp
+        self.attack = attack
+
+    def show(self):
+        print(f"{self.name} ({self.poke_type}) — HP: {self.hp}, Атака: {self.attack}")
+
+
+class FirePokemon(Pokemon):
+    def apply_bonus(self):
+        self.attack += 10
+
+
+class WaterPokemon(Pokemon):
+    def apply_bonus(self):
+        self.hp += 15
+
+
+class ElectricPokemon(Pokemon):
+    def attack_action(self):
+        print(f"⚡ {self.name}, выпускает молнию! Сила атаки: {self.attack}")
+
+
+charmander = FirePokemon("Чармандер", "огонь", 39, 52)
+squirtle = WaterPokemon("Сквиртл", "вода", 44, 48)
+pikachu = ElectricPokemon("Пикачу", "электричество", 35, 55)
+
+charmander.apply_bonus()
+squirtle.apply_bonus()
+
+charmander.show()
+squirtle.show()
+pikachu.show()
+
+pikachu.attack_action()
+
+
+№3
+class Block:
+    def __init__(self, name = None, hardness = 0, breakable = False):
+        self.name = name
+        self.hardness = hardness
+        self.breakable = breakable
+
+    def show_info(self):
+        print(f"Блок: {self.name}, \nПрочность: {self.hardness}, \nМожно сломать: {self.breakable}, \n   ")
+
+
+class Stone(Block):
+    def set_properties(self, name = "Stone", hardness = 10, breakable = "Можно сломать"):
+        self.name = name
+        self.hardness = hardness
+        self.breakable = breakable
+
+
+class Bedrock(Block):
+    def set_properties(self, name = "Bedrock", hardness = 999, breakable = "Нельзя сломать"):
+        self.name = name
+        self.hardness = hardness
+        self.breakable = breakable
+
+
+class GrassBlock(Block):
+    def set_properties(self, name = "GrassBlock", hardness = 1, breakable = "Можно сломать"):
+        self.name = name
+        self.hardness = hardness
+        self.breakable = breakable
+
+
+stone = Stone()
+bedrock = Bedrock()
+grass = GrassBlock()
+
+stone.set_properties()
+bedrock.set_properties()
+grass.set_properties()
+
+stone.show_info()
+bedrock.show_info()
+grass.show_info()
